@@ -383,6 +383,9 @@
 
 
 
+https://github.com/user-attachments/assets/057b823c-dd49-49ad-acc7-5d45a39628f8
+
+
 
 
 ### 5일차

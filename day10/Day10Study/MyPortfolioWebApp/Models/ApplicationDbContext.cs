@@ -14,7 +14,6 @@ namespace MyPortfolioWebApp.Models
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
-        
 
         protected ApplicationDbContext() { }
 

@@ -1,0 +1,16 @@
+﻿@model MyPortfolioWebApp.Models.Board
+
+<h2>삭제 확인</h2>
+
+<p>정말로 삭제하시겠습니까?</p>
+
+<div>
+    <h4>@Model.Title</h4>
+    <p>@Model.Content</p>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">삭제</button>
+    <a asp-action="Index" class="btn btn-secondary">취소</a>
+</form>

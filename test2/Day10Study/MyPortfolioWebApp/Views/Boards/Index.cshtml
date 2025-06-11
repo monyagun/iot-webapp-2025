@@ -1,0 +1,32 @@
+
+@model IEnumerable<SampleBoardProject.Models.Board>
+
+<h2>게시판</h2>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <a class="btn btn-primary" asp-action="Create">글 작성하기</a>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>제목</th>
+            <th>작성일</th>
+            <th>관리</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td><a asp-action="Details" asp-route-id="@item.Id">@item.Title</a></td>
+            <td>@item.CreatedAt.ToString("yyyy-MM-dd HH:mm")</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">수정</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">삭제</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

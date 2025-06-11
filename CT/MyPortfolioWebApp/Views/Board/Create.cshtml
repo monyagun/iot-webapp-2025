@@ -1,0 +1,71 @@
+﻿@model MyPortfolioWebApp.Models.Board
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<section id="news" class="section">
+    <div class="container section-title" data-aos="fade-up">
+        <h2>자유게시판</h2>
+        <p>로그인 후 작성가능 기능은 추후..</p>
+
+    </div>
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h4>Create</h4>
+        <hr />
+        <div class="row">
+            <div class="col-md">
+                <form asp-for="Board" asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input asp-for="PostDate" type="hidden" />
+                    <input asp-for="ReadCount" type="hidden" />
+                    <div class="form-group mb-2">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label asp-for="Writer" class="control-label"></label>
+                        <input asp-for="Writer" class="form-control" />
+                        <span asp-validation-for="Writer" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label asp-for="Title" class="control-label"></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label asp-for="Contents" class="control-label"></label>
+                        <input asp-for="Contents" class="form-control" />
+                        <span asp-validation-for="Contents" class="text-danger"></span>
+                    </div>
+
+                    @* <div class="form-group"> *@
+                    @*     <label asp-for="PostDate" class="control-label"></label> *@
+                    @*     <input asp-for="PostDate" class="form-control" /> *@
+                    @*     <span asp-validation-for="PostDate" class="text-danger"></span> *@
+                    @* </div> *@
+
+                    @* <div class="form-group"> *@
+                    @*     <label asp-for="ReadCount" class="control-label"></label> *@
+                    @*     <input asp-for="ReadCount" class="form-control" /> *@
+                    @*     <span asp-validation-for="ReadCount" class="text-danger"></span> *@
+                    @* </div> *@
+                    <div class="form-group">
+                        <input type="submit" value="저장" class="btn btn-sm btn-success btn-kelly" />
+                        <a asp-action="Index" class="btn btn-sm btn-success">리스트</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 입력 검증 스크립트 포함 -->
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

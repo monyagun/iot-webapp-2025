@@ -16,7 +16,7 @@ namespace WebApiApp01
             {
                 options.AddPolicy("AllowFrontend", policy =>
                 {
-                    policy.WithOrigins("http://localhost:5059")  // 프론트엔드(본인포트번호) 주소
+                    policy.WithOrigins("http://localhost:5427")  // 프론트엔드(본인포트번호) 주소
                         .AllowAnyHeader()
                         .AllowAnyMethod();
                 });
